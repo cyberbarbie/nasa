@@ -7,7 +7,7 @@ export default class App extends React.Component {
     super(props)
     this.state = {
       title: '',
-      pic: '',
+      pic: 'https://www.geek.com/wp-content/uploads/2016/11/gScmGae-625x352.png',
       explanation: '',
       date: '',
       media: ''
@@ -37,11 +37,11 @@ componentDidMount(){
         {this.state.media == 'video' ?
         <WebView
           javaScriptEnabled={true}
-          source={{url: this.state.pic}}
+          source={{uri: this.state.pic}}
           style={{width: 370, height: 200}}
         /> :
         <Image
-          source={{url: this.state.pic}}
+          source={{uri: this.state.pic}}
           style={{width: 370, height: 200}}
         />}
         <Text style={styles.text}>{this.state.explanation}</Text>
